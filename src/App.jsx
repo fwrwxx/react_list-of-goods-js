@@ -23,13 +23,13 @@ export const App = () => {
   let visibleGoods = [...goods];
 
   if (sortField === 'alphabetical') {
-    visibleGoods = visibleGoods.sort((a, b) => a.localeCompare(b));
+    visibleGoods = [...visibleGoods].sort((a, b) => a.localeCompare(b));
   } else if (sortField === 'length') {
-    visibleGoods = visibleGoods.sort((a, b) => a.length - b.length);
+    visibleGoods = [...visibleGoods].sort((a, b) => a.length - b.length);
   }
 
   if (reversed) {
-    visibleGoods.reverse();
+    visibleGoods = [...visibleGoods].reverse();
   }
 
   return (
